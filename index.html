@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A safety-first suspicious bot detector for gamers and streamers." />
+    <title>Npc detector 3000</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="shell topbar">
+      <div class="brand"><span class="brand-mark">✦</span> Npc detector 3000</div>
+      <div class="status"><span class="status-dot" id="server-status-dot"></span><span id="server-status">AI server ready</span></div>
+    </header>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Human review, smarter signals</div>
+          <h1>Spot the NPC. Protect the player.</h1>
+          <p>Report suspicious behavior, check a game screenshot, and ask a safety-first AI for a second opinion—without automatic punishment.</p>
+        </div>
+        <aside class="hero-note"><strong>What makes this different</strong> It looks at the moment you are in, explains the signal, and keeps a human in the loop.</aside>
+      </section>
+      <nav class="steps" aria-label="MVP steps">
+        <div class="step active"><span class="step-number">01</span>Report a bot</div>
+        <div class="step"><span class="step-number">02</span>Check a screenshot</div>
+        <div class="step"><span class="step-number">03</span>See this session</div>
+        <div class="step"><span class="step-number">04</span>Ask the AI</div>
+      </nav>
+      <div class="grid">
+        <section class="card wide" id="report">
+          <h2>01 / Submit a suspicious-bot report</h2>
+          <p class="card-intro">Start here. Give a human reviewer a clear lead, not a verdict.</p>
+          <form id="report-form">
+            <div class="row"><div><label for="game">Game</label><input id="game" name="game" required placeholder="e.g. Sample Arena" /></div><div><label for="player">Player label (optional)</label><input id="player" name="player" placeholder="Use a nickname, not private info" /></div></div>
+            <label for="reason">What looked suspicious?</label><select id="reason" name="reason"><option>Chat spam</option><option>Possible scam link</option><option>Impersonation</option><option>Repeated movement</option><option>Other suspicious behavior</option></select>
+            <label for="details">What happened?</label><textarea id="details" name="details" required placeholder="Describe only what you observed."></textarea>
+            <button class="button" type="submit">Send for human review →</button>
+            <div class="privacy">No automatic bans. Don’t include passwords, account numbers, or private messages.</div>
+            <div class="privacy" id="report-success" role="status"></div>
+          </form>
+          <div class="list" id="report-list"></div>
+        </section>
+        <section class="card" id="screenshot-check">
+          <h2>02 / Check a screenshot</h2>
+          <p class="card-intro">Choose a screenshot, then press check. The image is sent only at that moment.</p>
+          <form id="screenshot-form">
+            <div class="dropzone"><div><strong>Drop a game screenshot here</strong><br><small id="screenshot-name">or choose a file below</small><input id="screenshot" type="file" accept="image/*" /></div></div>
+            <img class="preview" id="preview" alt="Selected game screenshot preview" />
+            <button class="button" id="screenshot-button" type="submit">Check with AI →</button>
+            <div class="error" id="screenshot-error" role="alert"></div>
+            <div class="ai-result" id="screenshot-result" role="status"></div>
+          </form>
+        </section>
+        <section class="card" id="session">
+          <h2>03 / Current session</h2>
+          <p class="card-intro">Sample signals show the shape of the feature. Every serious case still needs a human review.</p>
+          <div class="list" id="detection-list"></div>
+        </section>
+        <section class="card wide" id="ask">
+          <h2>04 / Ask the safety AI</h2>
+          <p class="card-intro">Ask a real question about a suspicious message or moment. The API key stays on the server.</p>
+          <form id="question-form"><label for="question">Your question</label><textarea id="question" name="question" required placeholder="Is this reward message safe to click?"></textarea><button class="button" id="question-button" type="submit">Ask AI →</button><div class="error" id="question-error" role="alert"></div><div class="ai-result" id="question-result" role="status"></div></form>
+        </section>
+      </div>
+      <p class="footer">Saves on this computer only for now · Made for careful reports, not automatic punishment.</p>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

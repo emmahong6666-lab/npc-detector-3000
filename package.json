@@ -1,0 +1,9 @@
+{
+  "name": "npc-detector-3000",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple, safety-first bot detection MVP.",
+  "scripts": {
+    "start": "node server/index.js"
+  }
+}
